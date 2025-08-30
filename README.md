@@ -1,7 +1,7 @@
 
 
 
-local Versionxx = "2.5.7 "
+local Versionxx = "2.5.8 "
 print("Version: "..Versionxx)
 ---------------
 
@@ -106,6 +106,13 @@ do
     })
     local Toggle = Tabs.Farming:AddToggle("MyToggleOneHitMonter", {Title = "One Hit", Description = "Only OPL: Anarchy", Default = false })
     local Toggle = Tabs.Farming:AddToggle("MyToggleBypassOneHitMonter", {Title = "Bypass One Hit", Description = "Only OPL: Anarchy", Default = false })
+
+    local Weaponlist = {}
+    local Weapon = nil
+
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        table.insert(Weaponlist,v.Name)
+    end
 
     local DropdownWToolMonter = Tabs.Farming:AddDropdown("DropdownWTooMonterl", {
         Title = "Select Tools",
